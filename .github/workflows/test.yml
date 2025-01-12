@@ -26,7 +26,7 @@ jobs:
       matrix:
         os: [
           "macos-latest",
-          "ubuntu-latest",
+          "ubuntu-22.04",
         ]
         python-version: [
           "pypy3.10",
@@ -51,7 +51,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: MatteoH2O1999/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
         cache: pip
@@ -81,9 +81,9 @@ jobs:
     - name: Test
       run: |
         if [ $REVERSE ]; then
-          python3 -m pip install pytest-reverse
+          python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pytest-reverse
         fi
-        if [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
+        if [ "${{ matrix.os }}" = "ubuntu-22.04" ]; then
           xvfb-run -s '-screen 0 1024x768x24' sway&
           export WAYLAND_DISPLAY=wayland-1
           .ci/test.sh
@@ -121,7 +121,7 @@ jobs:
     permissions:
       contents: none
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     name: Test Successful
     steps:
       - name: Success

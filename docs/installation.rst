@@ -39,8 +39,8 @@ Basic Installation
 
 Install Pillow with :command:`pip`::
 
-    python3 -m pip install --upgrade pip
-    python3 -m pip install --upgrade Pillow
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade Pillow
 
 
 .. tab:: Linux
@@ -50,8 +50,8 @@ Install Pillow with :command:`pip`::
     optional libraries except libimagequant. Raqm support requires
     FriBiDi to be installed separately::
 
-        python3 -m pip install --upgrade pip
-        python3 -m pip install --upgrade Pillow
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade Pillow
 
     Most major Linux distributions, including Fedora, Ubuntu and ArchLinux
     also include Pillow in packages that previously contained PIL e.g.
@@ -65,15 +65,15 @@ Install Pillow with :command:`pip`::
     libraries except libimagequant. Raqm support requires
     FriBiDi to be installed separately::
 
-        python3 -m pip install --upgrade pip
-        python3 -m pip install --upgrade Pillow
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade Pillow
 
     While we provide binaries for both x86-64 and arm64, we do not provide universal2
     binaries. However, it is simple to combine our current binaries to create one::
 
         python3 -m pip download --only-binary=:all: --platform macosx_10_10_x86_64 Pillow
         python3 -m pip download --only-binary=:all: --platform macosx_11_0_arm64 Pillow
-        python3 -m pip install delocate
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' delocate
 
     Then, with the names of the downloaded wheels, use Python to combine them::
 
@@ -88,8 +88,8 @@ Install Pillow with :command:`pip`::
     libimagequant and libxcb. Raqm support requires
     FriBiDi to be installed separately::
 
-        python3 -m pip install --upgrade pip
-        python3 -m pip install --upgrade Pillow
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade Pillow
 
     To install Pillow in MSYS2, see `Building on Windows using MSYS2/MinGW`_.
 
@@ -347,8 +347,8 @@ Installing
 Once you have installed the prerequisites, to install Pillow from the source
 code on PyPI, run::
 
-    python3 -m pip install --upgrade pip
-    python3 -m pip install --upgrade Pillow --no-binary :all:
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade Pillow --no-binary :all:
 
 If the prerequisites are installed in the standard library locations
 for your machine (e.g. :file:`/usr` or :file:`/usr/local`), no
@@ -358,7 +358,7 @@ those locations by editing :file:`setup.py` or
 :file:`setup.cfg`, or by adding environment variables on the command
 line::
 
-    CFLAGS="-I/usr/pkg/include" python3 -m pip install --upgrade Pillow --no-binary :all:
+    CFLAGS="-I/usr/pkg/include" python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade Pillow --no-binary :all:
 
 If Pillow has been previously built without the required
 prerequisites, it may be necessary to manually clear the pip cache or
@@ -371,8 +371,8 @@ or download and extract the `compressed archive from PyPI`_.
 
 After navigating to the Pillow directory, run::
 
-    python3 -m pip install --upgrade pip
-    python3 -m pip install .
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 
 .. _compressed archive from PyPI: https://pypi.org/project/Pillow/#files
 
@@ -418,7 +418,7 @@ Build Options
 
 Sample usage::
 
-    python3 -m pip install --upgrade Pillow -C [feature]=enable
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade Pillow -C [feature]=enable
 
 Platform Support
 ----------------

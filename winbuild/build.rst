@@ -85,7 +85,7 @@ Once the dependencies are built, make sure the required environment variables
 are set by running ``winbuild\build\build_env.cmd`` and install Pillow with pip::
 
     winbuild\build\build_env.cmd
-    python.exe -m pip install -v -C raqm=vendor -C fribidi=vendor .
+    python.exe -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -v -C raqm=vendor -C fribidi=vendor .
 
 To build a wheel instead, run::
 
@@ -113,7 +113,7 @@ The following is a simplified version of the script used on AppVeyor::
     build\build_dep_all.cmd
     build\build_env.cmd
     cd ..
-    %PYTHON%\python.exe -m pip install -v -C raqm=vendor -C fribidi=vendor .
+    %PYTHON%\python.exe -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -v -C raqm=vendor -C fribidi=vendor .
     path C:\Pillow\winbuild\build\bin;%PATH%
     %PYTHON%\python.exe selftest.py
     %PYTHON%\python.exe -m pytest -vx --cov PIL --cov Tests --cov-report term --cov-report xml Tests

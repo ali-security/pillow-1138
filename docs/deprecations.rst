@@ -445,4 +445,4 @@ PIL.OleFileIO
 PIL.OleFileIO was removed as a vendored file in Pillow 4.0.0 (2017-01) in favour of
 the upstream olefile Python package, and replaced with an ``ImportError`` in 5.0.0
 (2018-01). The deprecated file has now been removed from Pillow. If needed, install from
-PyPI (eg. ``python3 -m pip install olefile``).
+PyPI (eg. ``python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' olefile``).

@@ -338,7 +338,7 @@ Changelog (Pillow)
 - Fix compiler warning: accessing 64 bytes in a region of size 48 #6714
   [wiredfool]
 
-- Use verbose flag for pip install #6713
+- Use verbose flag for pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' #6713
   [wiredfool, radarhere]
 
 9.3.0 (2022-10-29)

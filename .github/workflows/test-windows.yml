@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2022
     strategy:
       fail-fast: false
       matrix:
@@ -48,7 +48,7 @@ jobs:
 
     # sets env: pythonLocation
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: MatteoH2O1999/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
         cache: pip
@@ -57,8 +57,8 @@ jobs:
     - name: Print build system information
       run: python3 .github/workflows/system-info.py
 
-    - name: python3 -m pip install pytest pytest-cov pytest-timeout defusedxml
-      run: python3 -m pip install pytest pytest-cov pytest-timeout defusedxml
+    - name: python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pytest pytest-cov pytest-timeout defusedxml
+      run: python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pytest pytest-cov pytest-timeout defusedxml
 
     - name: Install dependencies
       id: install
@@ -159,7 +159,7 @@ jobs:
       run: |
         $FLAGS="-C raqm=vendor -C fribidi=vendor"
         if ('${{ github.event_name }}' -ne 'pull_request') { $FLAGS+=" -C imagequant=disable" }
-        cmd /c "winbuild\build\build_env.cmd && $env:pythonLocation\python.exe -m pip install -v $FLAGS ."
+        cmd /c "winbuild\build\build_env.cmd && $env:pythonLocation\python.exe -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -v $FLAGS ."
         & $env:pythonLocation\python.exe selftest.py --installed
       shell: pwsh
 
@@ -245,7 +245,7 @@ jobs:
     permissions:
       contents: none
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     name: Windows Test Successful
     steps:
       - name: Success

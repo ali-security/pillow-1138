@@ -30,16 +30,16 @@ For example:
 .. code-block:: bash
 
     # Install with dependencies for tests:
-    python3 -m pip install .[tests]
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .[tests]
 
     # Or for building docs:
-    python3 -m pip install .[docs]
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .[docs]
 
     # Or for all:
-    python3 -m pip install .[docs,tests]
+    python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .[docs,tests]
 
 On macOS, the last argument may need to be wrapped in quotes, e.g.
-``python3 -m pip install ".[tests]"``
+``python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' ".[tests]"``
 
 Therefore ``requirements.txt`` has been removed along with the ``make install-req``
 command for installing its contents.
