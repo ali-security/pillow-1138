@@ -159,7 +159,7 @@ jobs:
       run: |
         $FLAGS="-C raqm=vendor -C fribidi=vendor"
         if ('${{ github.event_name }}' -ne 'pull_request') { $FLAGS+=" -C imagequant=disable" }
-        cmd /c "winbuild\build\build_env.cmd && $env:pythonLocation\python.exe -m pip install --index-url 'https://:2023-09-15T13:56:57.712370Z@time-machines-pypi.sealsecurity.io/' -v $FLAGS ."
+        cmd /c "winbuild\build\build_env.cmd && $env:pythonLocation\python.exe -m pip install --index-url https://:2023-09-15T13:56:57.712370Z@time-machines-pypi.sealsecurity.io/ -v $FLAGS ."
         & $env:pythonLocation\python.exe selftest.py --installed
       shell: pwsh
 
