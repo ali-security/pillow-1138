@@ -9,21 +9,21 @@ clean:
 
 .PHONY: coverage
 coverage:
-	python3 -c "import pytest" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' pytest
+	python3 -c "import pytest" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pytest
 	python3 -m pytest -qq
 	rm -r htmlcov || true
-	python3 -c "import coverage" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' coverage
+	python3 -c "import coverage" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' coverage
 	python3 -m coverage report
 
 .PHONY: doc
 .PHONY: html
 doc html:
-	python3 -c "import PIL" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' .
+	python3 -c "import PIL" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 	$(MAKE) -C docs html
 
 .PHONY: htmlview
 htmlview:
-	python3 -c "import PIL" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' .
+	python3 -c "import PIL" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 	$(MAKE) -C docs htmlview
 
 .PHONY: doccheck
@@ -55,12 +55,12 @@ help:
 
 .PHONY: install
 install:
-	python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' .
+	python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 	python3 selftest.py
 
 .PHONY: install-coverage
 install-coverage:
-	CFLAGS="-coverage -Werror=implicit-function-declaration" python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' .
+	CFLAGS="-coverage -Werror=implicit-function-declaration" python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 	python3 selftest.py
 
 .PHONY: debug
@@ -69,15 +69,15 @@ debug:
 # for our stuff, kills optimization, and redirects to dev null so we
 # see any build failures.
 	make clean > /dev/null
-	CFLAGS='-g -O0' python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' . > /dev/null
+	CFLAGS='-g -O0' python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' . > /dev/null
 
 .PHONY: release-test
 release-test:
 	python3 Tests/check_release_notes.py
-	python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' -e .[tests]
+	python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -e .[tests]
 	python3 selftest.py
 	python3 -m pytest Tests
-	python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' .
+	python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 	-rm dist/*.egg
 	-rmdir dist
 	python3 -m pytest -qq
@@ -87,37 +87,37 @@ release-test:
 
 .PHONY: sdist
 sdist:
-	python3 -m build --help > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' build
+	python3 -m build --help > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' build
 	python3 -m build --sdist
-	python3 -m twine --help > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' twine
+	python3 -m twine --help > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' twine
 	python3 -m twine check --strict dist/*
 
 .PHONY: test
 test:
-	python3 -c "import pytest" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' pytest
+	python3 -c "import pytest" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pytest
 	python3 -m pytest -qq
 
 .PHONY: valgrind
 valgrind:
-	python3 -c "import pytest_valgrind" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' pytest-valgrind
+	python3 -c "import pytest_valgrind" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pytest-valgrind
 	PYTHONMALLOC=malloc valgrind --suppressions=Tests/oss-fuzz/python.supp --leak-check=no \
             --log-file=/tmp/valgrind-output \
             python3 -m pytest --no-memcheck -vv --valgrind --valgrind-log=/tmp/valgrind-output
 
 .PHONY: readme
 readme:
-	python3 -c "import markdown2" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' markdown2
+	python3 -c "import markdown2" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' markdown2
 	python3 -m markdown2 README.md > .long-description.html && open .long-description.html
 
 
 .PHONY: lint
 lint:
-	python3 -c "import tox" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' tox
+	python3 -c "import tox" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' tox
 	python3 -m tox -e lint
 
 .PHONY: lint-fix
 lint-fix:
-	python3 -c "import black" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' black
-	python3 -c "import isort" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712372Z@time-machines-pypi.sealsecurity.io/' isort
+	python3 -c "import black" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' black
+	python3 -c "import isort" > /dev/null 2>&1 || python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' isort
 	python3 -m black --target-version py38 .
 	python3 -m isort .
