@@ -1,6 +1,8 @@
 #!/bin/sh
 # Usage: ./download-and-extract.sh something https://example.com/something.tar.gz
 
+set -x
+
 archive=$1
 url=$2
 
