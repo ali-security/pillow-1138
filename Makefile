@@ -55,12 +55,12 @@ help:
 
 .PHONY: install
 install:
-	python3 -m pip -v install .
+	python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 	python3 selftest.py
 
 .PHONY: install-coverage
 install-coverage:
-	CFLAGS="-coverage -Werror=implicit-function-declaration" python3 -m pip -v install .
+	CFLAGS="-coverage -Werror=implicit-function-declaration" python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 	python3 selftest.py
 
 .PHONY: debug
@@ -69,7 +69,7 @@ debug:
 # for our stuff, kills optimization, and redirects to dev null so we
 # see any build failures.
 	make clean > /dev/null
-	CFLAGS='-g -O0' python3 -m pip -v install . > /dev/null
+	CFLAGS='-g -O0' python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' . > /dev/null
 
 .PHONY: release-test
 release-test:
