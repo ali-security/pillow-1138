@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 aptget_update()
 {
     if [ ! -z $1 ]; then
