@@ -28,25 +28,25 @@ if [[ $(uname) != CYGWIN* ]]; then
                              sway wl-clipboard
 fi
 
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' --upgrade wheel
-PYTHONOPTIMIZE=0 python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' cffi
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' coverage
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' defusedxml
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' olefile
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -U pytest
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -U pytest-cov
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -U pytest-timeout
-python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pyroma
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' --upgrade wheel
+PYTHONOPTIMIZE=0 python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' cffi
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' coverage
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' defusedxml
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' olefile
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' -U pytest
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' -U pytest-cov
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' -U pytest-timeout
+python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' pyroma
 
 if [[ $(uname) != CYGWIN* ]]; then
     # TODO Remove condition when NumPy supports 3.12
-    if ! [ "$GHA_PYTHON_VERSION" == "3.12-dev" ]; then python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' numpy ; fi
+    if ! [ "$GHA_PYTHON_VERSION" == "3.12-dev" ]; then python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' numpy ; fi
 
     # PyQt6 doesn't support PyPy3
     if [[ "$GHA_PYTHON_VERSION" != "3.12-dev" && $GHA_PYTHON_VERSION == 3.* ]]; then
         sudo apt-get -qq install libegl1 libxcb-cursor0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxkbcommon-x11-0
-        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pyqt6
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712375Z@time-machines-pypi.sealsecurity.io/' pyqt6
     fi
 
     # webp

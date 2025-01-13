@@ -39,8 +39,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -U pip
-        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' -U tox
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712376Z@time-machines-pypi.sealsecurity.io/' -U pip
+        python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712376Z@time-machines-pypi.sealsecurity.io/' -U tox
 
     - name: Lint
       run: tox -e lint
