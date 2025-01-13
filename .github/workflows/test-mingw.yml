@@ -42,6 +42,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pacman -Syu --noconfirm
           pacman -S --noconfirm \
               mingw-w64-x86_64-freetype \
               mingw-w64-x86_64-gcc \
