@@ -59,6 +59,8 @@ jobs:
               mingw-w64-x86_64-python-pip \
               mingw-w64-x86_64-python-pyqt6
 
+          python3 -m venv venv
+          source venv/Scripts/activate
           python3 -m pip install --force-reinstall --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' setuptools
           python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' pyroma pytest pytest-cov pytest-timeout
 
