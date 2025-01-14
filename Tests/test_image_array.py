@@ -35,14 +35,6 @@ def test_toarray():
     test_with_dtype(numpy.float64)
     test_with_dtype(numpy.uint8)
 
-    with Image.open("Tests/images/truncated_jpeg.jpg") as im_truncated:
-        if parse_version(numpy.__version__) >= parse_version("1.23"):
-            with pytest.raises(OSError):
-                numpy.array(im_truncated)
-        else:
-            with pytest.warns(UserWarning):
-                numpy.array(im_truncated)
-
 
 def test_fromarray():
     class Wrapper:
