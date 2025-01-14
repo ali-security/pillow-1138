@@ -66,8 +66,6 @@ jobs:
           pushd depends && ./install_extra_test_images.sh && popd
 
       - run: pip freeze
-      - name: check numpy version
-        run: python3 -c "import numpy; print(numpy.__version__)"
 
       - name: Build Pillow
         run: SETUPTOOLS_USE_DISTUTILS="stdlib" CFLAGS="-coverage" python3 -m pip install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
