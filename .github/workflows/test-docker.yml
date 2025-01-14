@@ -97,7 +97,13 @@ jobs:
           ["ubuntu-22.04-jammy-amd64"]=1001
         )
         sudo chown -R ${userids[${{ matrix.docker }}]} $GITHUB_WORKSPACE
-        docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }}
+
+        if [[ "${{ matrix.docker }}" == "amazon-2-amd64" ]]; then
+          docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow --user root pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }} /bin/bash -c "yum install -y libffi-devel && yum reinstall -y python3 && sudo -u pillow /depends/test.sh"
+        else
+          docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }}
+        fi
+
         sudo chown -R runner $GITHUB_WORKSPACE
 
     - name: After success
