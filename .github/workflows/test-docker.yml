@@ -110,16 +110,8 @@ jobs:
         docker stop pillow_container
         sudo mkdir -p $pil_path
         sudo cp src/PIL/*.py $pil_path
-        .ci/after_success.sh
       env:
         MATRIX_DOCKER: ${{ matrix.docker }}
-
-    - name: Upload coverage
-      uses: codecov/codecov-action@v3
-      with:
-        flags: GHA_Docker
-        name: ${{ matrix.docker }}
-        gcov: true
 
   success:
     permissions:
