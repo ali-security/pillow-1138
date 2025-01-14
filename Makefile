@@ -60,6 +60,7 @@ install:
 
 .PHONY: install-coverage
 install-coverage:
+	python3 -m pip install --force-reinstall --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' setuptools wheel
 	CFLAGS="-coverage -Werror=implicit-function-declaration" python3 -m pip -v install --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' .
 	python3 selftest.py
 
