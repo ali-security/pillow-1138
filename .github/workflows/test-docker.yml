@@ -99,7 +99,7 @@ jobs:
         sudo chown -R ${userids[${{ matrix.docker }}]} $GITHUB_WORKSPACE
         echo pip freeze
         pip freeze
-        docker run --name pillow_container  -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }}
+        docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }} /bin/bash -c "pip freeze && pip install --force-reinstall --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' setuptools wheel && depends/test.sh"
         sudo chown -R runner $GITHUB_WORKSPACE
 
     - name: After success
