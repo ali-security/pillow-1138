@@ -99,6 +99,8 @@ jobs:
         sudo chown -R ${userids[${{ matrix.docker }}]} $GITHUB_WORKSPACE
         echo pip freeze
         pip freeze
+        echo numpy version
+        python3 -c "import numpy; print(numpy.__version__)"
         docker run --name pillow_container  -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }}
         sudo chown -R runner $GITHUB_WORKSPACE
 
