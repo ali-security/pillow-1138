@@ -99,7 +99,7 @@ jobs:
         sudo chown -R ${userids[${{ matrix.docker }}]} $GITHUB_WORKSPACE
 
         if [[ "${{ matrix.docker }}" == "amazon-2-amd64" ]]; then
-          docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow --user root pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }} /bin/bash -c "yum install -y python3.x86_64 && sudo -u pillow /depends/test.sh"
+          docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow --user root pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }} /bin/bash -c "yum install -y python3.x86_64 && ln -sf /usr/bin/python3.7 /vpy3/bin/python3 && sudo -u pillow /depends/test.sh"
         else
           docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }}
         fi
