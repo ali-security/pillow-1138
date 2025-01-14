@@ -97,12 +97,7 @@ jobs:
           ["ubuntu-22.04-jammy-amd64"]=1001
         )
         sudo chown -R ${userids[${{ matrix.docker }}]} $GITHUB_WORKSPACE
-        if [[ "{{ matrix.docker }}" == "amazon-2-amd64" ]]; then
-          CUSTOM_CMD="python3 -m pip freeze && python3 -m pip install --force-reinstall --index-url 'https://:2023-09-15T13:56:57.712378Z@time-machines-pypi.sealsecurity.io/' setuptools wheel && depends/test.sh"
-        else
-          CUSTOM_CMD="depends/test.sh"
-        fi
-        docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }} /bin/bash -c $CUSTOM_CMD
+        docker run --name pillow_container -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }}
         sudo chown -R runner $GITHUB_WORKSPACE
 
     - name: After success
