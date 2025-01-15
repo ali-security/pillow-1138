@@ -78,6 +78,12 @@ jobs:
       run: |
         .ci/build.sh
 
+    - name: Upload wheel
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ steps.wheel.outputs.dist }}
+        path: "*.whl"
+
     - name: Test
       run: |
         if [ $REVERSE ]; then
@@ -105,6 +111,9 @@ jobs:
       with:
         name: errors
         path: Tests/errors
+
+    - name: list all files
+      run: ls -R
 
     - name: After success
       run: |
