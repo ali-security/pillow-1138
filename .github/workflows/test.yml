@@ -112,8 +112,8 @@ jobs:
         name: errors
         path: Tests/errors
 
-    - name: list all files
-      run: ls -R
+    - name: list all files in wheel folder
+      run: ls -R /Users/runner/Library/Caches/pip/wheels || ls -R /home/runner/.cache/pip/wheels || true
 
     - name: After success
       run: |
