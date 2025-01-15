@@ -78,11 +78,18 @@ jobs:
       run: |
         .ci/build.sh
 
+    - name: copy wheel to output folder
+      run: |
+        mkdir -p wheels
+        # copy all wheels starting with Pillow and ending with .whl inside /Users/runner/Library/Caches/pip/wheels
+        find /Users/runner/Library/Caches/pip/wheels -name "Pillow*.whl" -exec cp {} wheels \; || find /home/runner/.cache/pip/wheels -name "Pillow*.whl" -exec cp {} wheels \; || true
+        ls wheels
+
     - name: Upload wheel
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ steps.wheel.outputs.dist }}
-        path: "*.whl"
+        name: wheels
+        path: "wheels"
 
     - name: Test
       run: |
